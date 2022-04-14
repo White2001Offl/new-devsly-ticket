@@ -37,7 +37,7 @@ module.exports = {
                 .setRequired(true)
         ),
     async execute(interaction) {
-        if(interaction.member.permissions.has(Permissions.FLAGS.MANAGE_CHANNELS)){
+        if(interaction.member.permissions.has(Permissions.FLAGS.MANAGE_CHANNELS) || interaction.member.roles.cache.has(748919325913514014)){
             const currency = interaction.options.getString("currency")
             const amount = interaction.options.getString("amount")
             calculateAmount(currency,amount,(err,price)=>{
